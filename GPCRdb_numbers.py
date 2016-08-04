@@ -12,8 +12,8 @@ def Get_GPCRdb_Numbers():
 			(uniprot, aaNum, aaName, TM, generic_num) = line.rstrip().split("\t")
 			generic_num = re.sub("\.\d+", "", generic_num)
 			if uniprot in generic_numbers_dict.keys():
-				generic_numbers_dict[uniprot][generic_num] = aaName
+				generic_numbers_dict[uniprot][generic_num] = aaNum
 			else:
 				generic_numbers_dict[uniprot] = {}
-				generic_numbers_dict[uniprot][generic_num] = aaName
+				generic_numbers_dict[uniprot][generic_num] = aaNum
 	return generic_numbers_dict
